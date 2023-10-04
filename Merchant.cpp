@@ -1,4 +1,5 @@
 #include "Merchant.h"
+#include "Character.h"
 using namespace std;
 #include <iostream>
 
@@ -33,3 +34,38 @@ int Merchant::GetMoney()
 {
 	return mMoney;
 }
+
+
+void Merchant::Display()
+{
+	cout << "I'm " << mName << " ! " << mCatchPhrase << " The " << mShopName << " ! " << endl;
+}
+
+void Merchant::DisplayShop()
+{
+	cout << "Hello traveler ! " << endl;
+	Display();
+	cout << "We sell a lot of different weapon and we also can buy your weapon at a nice price." << endl;
+}
+
+void Merchant::BuyOrSell(int choice, Character& player)
+{
+	cout << "Do you want to buy or sell something ?" << endl << "Or just quit my shop ?" << endl;
+	cout << "1. Buy" << endl << "2. Sell" << endl << "3. Quit" << endl;
+	cin >> choice;
+	if (choice == 1) {
+		DisplayInventoryShop();
+	}
+	else if (choice == 2) {
+		player.DisplayInventoryPlayer();
+	}
+	else if (choice == 3) {
+
+	}
+}
+
+void Merchant::DisplayInventoryShop()
+{
+
+}
+

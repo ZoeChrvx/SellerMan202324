@@ -21,5 +21,10 @@ public:
 	std::string GetCatchPhrase();
 	int GetMoney();
 
+	void Display();
+	void DisplayShop();
+	void BuyOrSell(int choice, Character& player);
+	void DisplayInventoryShop();
+
 };
 

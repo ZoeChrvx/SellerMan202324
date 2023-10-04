@@ -12,7 +12,6 @@ private:
 	std::string cCatchPhrase;
 	int cMoney;
 	int cLifePoint;
-	//weapon
 	Weapon cWeapon;
 	Races cRace;
 	Job cJob;
@@ -31,11 +30,18 @@ public:
 	std::string GetJob();
 
 	void Display();
-	void DisplayClasses();
-	Job ChooseClass();
-	int Attack(Character& target);
+	void Attack(Character& target);
 	void TakeDamage(int enemyAttack);
 	void Loot(Character&);
+	void DisplayInventoryPlayer();
 
+	static void DisplayBasicWeapon();
+	static void DisplayRace();
+	static Races ChooseRace(int choice);
+	static void DisplayClasses();
+	static Job ChooseClass(int choice);
+	static void DisplayActivities(Merchant& merchant);
+	
+	
 };
 

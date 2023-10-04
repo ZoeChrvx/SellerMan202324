@@ -1,2 +1,16 @@
-﻿  SellerMan.cpp
-  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\SellerMan.exe
+﻿  Character.cpp
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.h(43,32): error C2061: syntax error: identifier 'Merchant'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.cpp(133,17): error C2511: 'void Character::DisplayActivities(Merchant &)': overloaded member function not found in 'Character'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.h(7,7): message : see declaration of 'Character'
+  Merchant.cpp
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Merchant.h(26,29): error C2061: syntax error: identifier 'Character'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Merchant.cpp(51,16): error C2511: 'void Merchant::BuyOrSell(int,Character &)': overloaded member function not found in 'Merchant'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Merchant.h(7,7): message : see declaration of 'Merchant'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Merchant.cpp(57,3): error C2352: 'Merchant::DisplayInventoryShop': a call of a non-static member function requires an object
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Merchant.h(27,7): message : see declaration of 'Merchant::DisplayInventoryShop'
+  SellerMan.cpp
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.h(43,32): error C2061: syntax error: identifier 'Merchant'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\SellerMan.cpp(90,13): error C2039: 'DisplayActivity': is not a member of 'Character'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.h(7,7): message : see declaration of 'Character'
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\SellerMan.cpp(90,28): error C3861: 'DisplayActivity': identifier not found
+  Generating Code...

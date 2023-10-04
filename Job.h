@@ -3,6 +3,7 @@
 
 enum class Job
 {
+	Unemployed,
 	Archer,
 	Warrior,
 	Priest,

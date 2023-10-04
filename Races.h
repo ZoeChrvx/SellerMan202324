@@ -3,6 +3,7 @@
 
 enum class Races
 {
+	Undefined,
 	Elf,
 	Orc,
 	Goblin,
