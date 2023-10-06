@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Weapon.h"
 #include <vector>
+#include "Character.h"
 
 
 class Merchant
@@ -23,7 +24,7 @@ public:
 
 	void Display();
 	void DisplayShop();
-	void BuyOrSell(int choice, Character& player);
+	void BuyOrSell(int choice, Character player, Merchant merchant);
 	void DisplayInventoryShop();
 
 };

@@ -15,18 +15,6 @@ Character::Character(string firstName, string lastName, string catchPhrase, int 
 	cJob = job;
 }
 
-Character::Character(Weapon weapon)
-{
-	cFirstName = "Arthur";
-	cLastName = "Pendragon";
-	cCatchPhrase = "See the light through my blade !";
-	cMoney = 999;
-	cLifePoint = 100;
-	cWeapon = weapon;
-	cRace = Races::Human;
-	cJob = Job::Warrior;
-}
-
 Character::~Character() {};
 
 string Character::GetFirstName() 
@@ -130,7 +118,9 @@ Job Character::ChooseClass(int choice)
 
 	}
 }
-void Character::DisplayActivities(Merchant& merchant) 
+
+
+void Character::DisplayActivities(Merchant& merchant)
 {
 	cout << "Do you want to go fight some rivals or you want to go buy some weapons ?" << endl;
 	cout << "1. Go Fight" << endl;

@@ -4,6 +4,8 @@
 #include "Job.h"
 #include "Weapon.h"
 
+class Merchant;
+
 class Character
 {
 private:
@@ -18,7 +20,6 @@ private:
 
 public:
 	Character(std::string firstName, std::string lastName, std::string catchPhrase, int money, int lifePoint,Weapon weapon, Races race, Job job);
-	Character(Weapon weapon);
 	~Character();
 
 	std::string GetFirstName();
@@ -33,7 +34,7 @@ public:
 	void Attack(Character& target);
 	void TakeDamage(int enemyAttack);
 	void Loot(Character&);
-	void DisplayInventoryPlayer();
+	//void DisplayInventoryPlayer();
 
 	static void DisplayBasicWeapon();
 	static void DisplayRace();

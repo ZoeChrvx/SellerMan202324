@@ -87,7 +87,7 @@ int main()
 	player.Display();
 	cout << endl;
 	cout << endl;
-	Character::DisplayActivity(merchant);
+	Character::DisplayActivities(merchant);
 	
 
 

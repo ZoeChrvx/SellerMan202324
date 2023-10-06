@@ -48,19 +48,22 @@ void Merchant::DisplayShop()
 	cout << "We sell a lot of different weapon and we also can buy your weapon at a nice price." << endl;
 }
 
-void Merchant::BuyOrSell(int choice, Character& player)
+void Merchant::BuyOrSell(int choice, Character player, Merchant merchant)
 {
 	cout << "Do you want to buy or sell something ?" << endl << "Or just quit my shop ?" << endl;
 	cout << "1. Buy" << endl << "2. Sell" << endl << "3. Quit" << endl;
 	cin >> choice;
 	if (choice == 1) {
-		DisplayInventoryShop();
+		merchant.DisplayInventoryShop();
+		return ;
 	}
 	else if (choice == 2) {
-		player.DisplayInventoryPlayer();
+		//player.DisplayInventoryPlayer();
+		return;
 	}
 	else if (choice == 3) {
-
+		Character::DisplayActivities(merchant);
+		return ;
 	}
 }
 
