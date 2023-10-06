@@ -24,7 +24,7 @@ public:
 
 	void Display();
 	void DisplayShop();
-	void BuyOrSell(int choice, Character player, Merchant merchant);
+	void BuyOrSell(Character player);
 	void DisplayInventoryShop();
 
 };

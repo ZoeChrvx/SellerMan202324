@@ -19,6 +19,7 @@ int main()
 	int choiceClass;
 	Races playerRace = Races::Undefined;
 	int choiceRace;
+	vector<Weapon> playerInventory;
 
 	//Merchant
 	vector<Weapon> shopInventory;
@@ -34,7 +35,8 @@ int main()
 
 
 	//Character
-	Character arthurP("Arthur", "Pendragon", "See the light through my blade !", 500, 100, excalibur, Races::Human, Job::Warrior);
+	vector<Weapon> arthurInventory;
+	Character arthurP("Arthur", "Pendragon", "See the light through my blade !", 500, 100, excalibur, Races::Human, Job::Warrior, arthurInventory);
 		
 	
 	cout << "Hey ! Let's create your character !" << endl;
@@ -47,7 +49,7 @@ int main()
 	cout << "Okey perfect buddy. You're going have 100 life point and 100 golds to start you're adventure." << endl;
 	cout << endl;
 	cout << endl;
-	cout << "Now you need to choose a class between these 4 basics weapons." << endl;
+	cout << "Now you need to choose a weapon between these 4 basics weapons." << endl;
 	Character::DisplayBasicWeapon();
 	cin >> choiceWeapon;
 	if (choiceWeapon == 1) {
@@ -69,7 +71,7 @@ int main()
 
 	
 	while (playerRace == Races::Undefined) {
-		cout << "Now you need to choose a class between these 4 races." << endl;
+		cout << "Now you need to choose a race between these 4 races." << endl;
 		Character::DisplayRace();
 		cin >> choiceRace;
 		playerRace = Character::ChooseRace(choiceRace);
@@ -81,14 +83,15 @@ int main()
 		cin >> choiceClass;
 		playerJob = Character::ChooseClass(choiceClass);
 	}
-	Character player(firstName, lastName, catchPhrase, 100, 100, playerWeapon, playerRace, playerJob);
+	Character player(firstName, lastName, catchPhrase, 100, 100, playerWeapon, playerRace, playerJob, playerInventory);
 
 	cout << "Sooo, now, this is you !" << endl;
 	player.Display();
 	cout << endl;
 	cout << endl;
-	Character::DisplayActivities(merchant);
+	player.DisplayActivities(merchant);
 	
+	merchant.DisplayInventoryShop();
 
 
 

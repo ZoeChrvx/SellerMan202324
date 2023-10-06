@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include<vector>
 #include "Races.h"
 #include "Job.h"
 #include "Weapon.h"
@@ -17,9 +18,10 @@ private:
 	Weapon cWeapon;
 	Races cRace;
 	Job cJob;
+	std::vector<Weapon> cInventory;
 
 public:
-	Character(std::string firstName, std::string lastName, std::string catchPhrase, int money, int lifePoint,Weapon weapon, Races race, Job job);
+	Character(std::string firstName, std::string lastName, std::string catchPhrase, int money, int lifePoint,Weapon weapon, Races race, Job job, std::vector<Weapon> inventory);
 	~Character();
 
 	std::string GetFirstName();
@@ -34,14 +36,14 @@ public:
 	void Attack(Character& target);
 	void TakeDamage(int enemyAttack);
 	void Loot(Character&);
-	//void DisplayInventoryPlayer();
+	void DisplayInventoryPlayer();
 
 	static void DisplayBasicWeapon();
 	static void DisplayRace();
 	static Races ChooseRace(int choice);
 	static void DisplayClasses();
 	static Job ChooseClass(int choice);
-	static void DisplayActivities(Merchant& merchant);
+	void DisplayActivities(Merchant& merchant);
 	
 	
 };

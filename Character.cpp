@@ -3,7 +3,7 @@
 using namespace std;
 #include <iostream>
 
-Character::Character(string firstName, string lastName, string catchPhrase, int money, int lifePoint, Weapon weapon, Races race, Job job)
+Character::Character(string firstName, string lastName, string catchPhrase, int money, int lifePoint, Weapon weapon, Races race, Job job, std::vector<Weapon> inventory)
 {
 	cFirstName = firstName;
 	cLastName = lastName;
@@ -13,6 +13,7 @@ Character::Character(string firstName, string lastName, string catchPhrase, int 
 	cWeapon = weapon;
 	cRace = race;
 	cJob = job;
+	cInventory = inventory;
 }
 
 Character::~Character() {};
@@ -98,7 +99,6 @@ void Character::DisplayClasses()
 	cout << 3 << ". Priest" << endl;
 	cout << 4 << ". Archer" << endl;
 }
-
 Job Character::ChooseClass(int choice)
 {
 	if (choice == 1) {
@@ -119,22 +119,26 @@ Job Character::ChooseClass(int choice)
 	}
 }
 
-
 void Character::DisplayActivities(Merchant& merchant)
 {
 	cout << "Do you want to go fight some rivals or you want to go buy some weapons ?" << endl;
-	cout << "1. Go Fight" << endl;
-	cout << "2. Go Shop" << endl;
+	cout << "1. Go Shop" << endl;
+	cout << "2. Go Fight" << endl;
 	int choiceActivities;
 	cin >> choiceActivities;
 	if (choiceActivities == 1) {
 		merchant.DisplayShop();
+		merchant.BuyOrSell(*this);
 	}
 	else if (choiceActivities == 2) {
 		//go fight
 	}
 }
 
+void Character::DisplayInventoryPlayer()
+{
+
+}
 void Character::Attack(Character& target)
 {
 	int damages = cWeapon.GetDamages();
@@ -147,7 +151,6 @@ void Character::TakeDamage(int enemyAttack)
 	cout << cFirstName << " " << cLastName << " has " << cLifePoint << " hp." << endl;
 	
 }
-
 void Character::Loot(Character&)
 {
 
