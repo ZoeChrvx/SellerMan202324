@@ -21,6 +21,11 @@ Weapon::Weapon(string name, string description, WeaponType type, int weight, int
 
 Weapon::~Weapon(){}
 
+void Weapon::Display()
+{
+	cout << "- " << GetWeaponTypeString() << ": " << wName << ", " << wDamages << ". It's cost " << wCost * (0.2 + wDurability) << " golds." << endl;
+}
+
 string Weapon::GetName() 
 {
 	return wName;

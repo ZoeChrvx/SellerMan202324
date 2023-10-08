@@ -57,10 +57,11 @@ void Merchant::BuyOrSell(Character player)
 	cin >> choice;
 	if (choice == 1) {
 		DisplayInventoryShop();
+
 		return ;
 	}
 	else if (choice == 2) {
-		//player.DisplayInventoryPlayer();
+		player.DisplayInventoryPlayer();
 		return;
 	}
 	else if (choice == 3) {
@@ -73,7 +74,7 @@ void Merchant::DisplayInventoryShop()
 {
 	for(Weapon weapon : mWeapons)
 	{
-		weapon.GetName();
+		weapon.Display();
 	}
 }
 

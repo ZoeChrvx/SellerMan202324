@@ -17,6 +17,7 @@ public:
 	Weapon(std::string name, std::string description, WeaponType type, int weight, int damages, int cost, int durability);
 	~Weapon();
 
+	void Display();
 	std::string GetName();
 	std::string GetDescription();
 	std::string GetWeaponTypeString();

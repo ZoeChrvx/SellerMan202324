@@ -137,8 +137,13 @@ void Character::DisplayActivities(Merchant& merchant)
 
 void Character::DisplayInventoryPlayer()
 {
-
+	cWeapon.Display();
+	for (Weapon weapon : cInventory)
+	{
+		weapon.Display();
+	}
 }
+
 void Character::Attack(Character& target)
 {
 	int damages = cWeapon.GetDamages();

@@ -23,22 +23,37 @@ int main()
 
 	//Merchant
 	vector<Weapon> shopInventory;
+
+	// Weapon Shop
+	Weapon damocles("Damocles", "the double-edged sword", WeaponType::Sword, 15, 50, 50, 1);
+	Weapon glamdring("Glamdring", "Gandalf's dagger", WeaponType::Dagger, 7, 20, 50, 1);
+	Weapon boStaff("Bo", "the gorgious Bo", WeaponType::Staff, 12, 30, 50, 1);
+	Weapon arthemis("Golden Bow", "Arthemis's Weapon", WeaponType::Bow, 35, 45, 50, 1);
+
+	shopInventory.push_back(damocles);
+	shopInventory.push_back(glamdring);
+	shopInventory.push_back(boStaff);
+	shopInventory.push_back(arthemis);
+
 	Merchant merchant("Bob", "BilboQuet", "Welcome in my bilbobi Shop !", 99999, shopInventory);
 
 	//Weapons
+	//Basic
 	Weapon basicSword("Bloody Sword", "a basic sword", WeaponType::Sword, 5, 10, 10, 1);
 	Weapon basicDagger("Sticky Dagger", "a basic dagger", WeaponType::Dagger, 5, 10, 10, 1);
 	Weapon basicStaff("Fire Staff", "a basic staff", WeaponType::Staff, 5, 10, 10, 1);
 	Weapon basicBow("Windy Wind", "a basic bow", WeaponType::Bow, 5, 10, 10, 1);
 
+	
+	//Arthur
 	Weapon excalibur("Excalibur", "the legendary sword", WeaponType::Sword, 20, 25, 99, 1);
-
 
 	//Character
 	vector<Weapon> arthurInventory;
 	Character arthurP("Arthur", "Pendragon", "See the light through my blade !", 500, 100, excalibur, Races::Human, Job::Warrior, arthurInventory);
 		
-	
+
+
 	cout << "Hey ! Let's create your character !" << endl;
 	cout << "First, what is your first name ?" << endl;
 	cin >> firstName;
@@ -90,8 +105,7 @@ int main()
 	cout << endl;
 	cout << endl;
 	player.DisplayActivities(merchant);
-	
-	merchant.DisplayInventoryShop();
+
 
 
 
