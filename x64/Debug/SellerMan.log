@@ -1,2 +1,7 @@
-﻿  Merchant.cpp
-  SellerMan.vcxproj -> D:\Artfx\Programmation\WS Save\SellerMan202324\x64\Debug\SellerMan.exe
+﻿  Character.cpp
+  Merchant.cpp
+  SellerMan.cpp
+  Weapon.cpp
+  Generating Code...
+C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.cpp(120): warning C4715: 'Character::ChooseClass': not all control paths return a value
+  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\SellerMan.exe

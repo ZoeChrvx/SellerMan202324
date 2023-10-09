@@ -72,9 +72,15 @@ void Merchant::BuyOrSell(Character player)
 
 void Merchant::DisplayInventoryShop()
 {
+	int nbWeapon = 0;
 	for(Weapon weapon : mWeapons)
 	{
+		nbWeapon += 1;
+		cout << nbWeapon << " ";
 		weapon.Display();
 	}
+	cout << endl;
+	cout << "Enter the"
+
 }
 
