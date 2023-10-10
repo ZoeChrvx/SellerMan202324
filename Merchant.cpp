@@ -56,7 +56,7 @@ void Merchant::BuyOrSell(Character player)
 	int choice;
 	cin >> choice;
 	if (choice == 1) {
-		DisplayInventoryShop();
+		DisplayInventoryShop(player);
 
 		return ;
 	}
@@ -70,8 +70,9 @@ void Merchant::BuyOrSell(Character player)
 	}
 }
 
-void Merchant::DisplayInventoryShop()
+void Merchant::DisplayInventoryShop(Character player)
 {
+	cout << "(Choose the number of the weapon you want to buy)" << endl;
 	int nbWeapon = 0;
 	for(Weapon weapon : mWeapons)
 	{
@@ -79,8 +80,51 @@ void Merchant::DisplayInventoryShop()
 		cout << nbWeapon << " ";
 		weapon.Display();
 	}
+	cout << "- Return" << endl;
 	cout << endl;
-	cout << "Enter the"
+	int chooseWeaponBuy;
+	cin >> chooseWeaponBuy;
+	if(chooseWeaponBuy-1 <= mWeapons.size())
+	{
+		if (player.GetMoney() >= mWeapons[chooseWeaponBuy - 1].GetCost() * (0.2 + mWeapons[chooseWeaponBuy - 1].GetDurability())) 
+		{
+			player.AddInventory(mWeapons[chooseWeaponBuy - 1]);
+			DeleteInventory(chooseWeaponBuy);
+			cout << "Thank you for your purchase !" << endl;
+			cout << "You have " << player.GetMoney() << " gold left" << endl;
+			cout << "Do you want buy something else ?" << endl;
+			cout << "1- Yes" << endl << "2- No" << endl;
+			int choose;
+			cin >> choose;
+			if(choose == 1)
+			{
+				DisplayInventoryShop(player);
+			}
+			else if(choose == 2)
+			{
+				BuyOrSell(player);
+			}
+		}
+		else if(player.GetMoney() < mWeapons[chooseWeaponBuy - 1].GetCost() * (0.2 + mWeapons[chooseWeaponBuy - 1].GetDurability()))
+		{
+			cout << "Oh sorry " << player.GetFirstName() << ". You don't have the money to get that." << endl;
+		}
+	}
+	else if (chooseWeaponBuy- 1 == mWeapons.size() + 1) 
+	{
+		BuyOrSell(player);
+	}
 
 }
 
+void Merchant::AddInventory(Weapon weapon)
+{
+	std::vector<Weapon>::iterator it = mWeapons.end();
+	it = mWeapons.insert(it, weapon);
+}
+
+void Merchant::DeleteInventory(int purchasedWeapon)
+{
+	std::vector<Weapon>::iterator it = mWeapons.begin() + (purchasedWeapon-1);
+	it = mWeapons.erase(it);
+}

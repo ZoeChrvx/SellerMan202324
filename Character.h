@@ -37,6 +37,7 @@ public:
 	void TakeDamage(int enemyAttack);
 	void Loot(Character&);
 	void DisplayInventoryPlayer();
+	void AddInventoryPlayer(Weapon weapon);
 
 	static void DisplayBasicWeapon();
 	static void DisplayRace();

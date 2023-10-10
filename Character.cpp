@@ -137,11 +137,28 @@ void Character::DisplayActivities(Merchant& merchant)
 
 void Character::DisplayInventoryPlayer()
 {
+	cout << "(Choose the number of the weapon you want to sell)" << endl;
 	cWeapon.Display();
+	int nbWeapon = 0;
 	for (Weapon weapon : cInventory)
 	{
+		nbWeapon += 1;
+		cout << nbWeapon << " ";
 		weapon.Display();
 	}
+	cout << "- Return" << endl;
+	int chooseWeaponSell;
+	cin >> chooseWeaponSell;
+	if(chooseWeaponSell-1 <= cInventory.size())
+	{
+
+	}
+}
+
+void Character::AddInventoryPlayer(Weapon weapon)
+{
+	cInventory.push_back(weapon);
+	cMoney -= weapon.GetCost() * (0.2 + weapon.GetDurability());
 }
 
 void Character::Attack(Character& target)

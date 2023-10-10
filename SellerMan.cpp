@@ -59,7 +59,7 @@ int main()
 	cin >> firstName;
 	cout << "And your last name ?" << endl;
 	cin >> lastName;
-	cout << "Nice " << firstName << " ! Now tell me yur catchphrase !" << endl;
+	cout << "Nice " << firstName << " ! Now tell me your catchphrase !" << endl;
 	cin >> catchPhrase;
 	cout << "Okey perfect buddy. You're going have 100 life point and 100 golds to start you're adventure." << endl;
 	cout << endl;
