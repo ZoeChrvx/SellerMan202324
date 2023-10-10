@@ -161,6 +161,11 @@ void Character::AddInventoryPlayer(Weapon weapon)
 	cMoney -= weapon.GetCost() * (0.2 + weapon.GetDurability());
 }
 
+void Character::DeleteInventoryPlayer(int soldWeapon)
+{
+
+}
+
 void Character::Attack(Character& target)
 {
 	int damages = cWeapon.GetDamages();

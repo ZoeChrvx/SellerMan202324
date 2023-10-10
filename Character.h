@@ -38,6 +38,7 @@ public:
 	void Loot(Character&);
 	void DisplayInventoryPlayer();
 	void AddInventoryPlayer(Weapon weapon);
+	void DeleteInventoryPlayer(int soldWeapon);
 
 	static void DisplayBasicWeapon();
 	static void DisplayRace();
