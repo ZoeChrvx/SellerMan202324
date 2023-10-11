@@ -61,7 +61,7 @@ void Merchant::BuyOrSell(Character player)
 		return ;
 	}
 	else if (choice == 2) {
-		player.DisplayInventoryPlayer();
+		player.DisplayInventoryPlayer(*this);
 		return;
 	}
 	else if (choice == 3) {
@@ -88,7 +88,7 @@ void Merchant::DisplayInventoryShop(Character player)
 	{
 		if (player.GetMoney() >= mWeapons[chooseWeaponBuy - 1].GetCost() * (0.2 + mWeapons[chooseWeaponBuy - 1].GetDurability())) 
 		{
-			player.AddInventory(mWeapons[chooseWeaponBuy - 1]);
+			player.AddInventoryPlayer(mWeapons[chooseWeaponBuy - 1]);
 			DeleteInventory(chooseWeaponBuy);
 			cout << "Thank you for your purchase !" << endl;
 			cout << "You have " << player.GetMoney() << " gold left" << endl;

@@ -114,8 +114,8 @@ Job Character::ChooseClass(int choice)
 		return Job::Archer;
 	}
 	else {
+		return Job::Unemployed;
 		DisplayClasses();
-
 	}
 }
 
@@ -124,6 +124,7 @@ void Character::DisplayActivities(Merchant& merchant)
 	cout << "Do you want to go fight some rivals or you want to go buy some weapons ?" << endl;
 	cout << "1. Go Shop" << endl;
 	cout << "2. Go Fight" << endl;
+	cout << "3. Change Weapon" << endl;
 	int choiceActivities;
 	cin >> choiceActivities;
 	if (choiceActivities == 1) {
@@ -135,11 +136,12 @@ void Character::DisplayActivities(Merchant& merchant)
 	}
 }
 
-void Character::DisplayInventoryPlayer()
+void Character::DisplayInventoryPlayer(Merchant merchant)
 {
+	int nbWeapon = 1;
 	cout << "(Choose the number of the weapon you want to sell)" << endl;
+	cout << nbWeapon << " ";
 	cWeapon.Display();
-	int nbWeapon = 0;
 	for (Weapon weapon : cInventory)
 	{
 		nbWeapon += 1;
@@ -151,19 +153,36 @@ void Character::DisplayInventoryPlayer()
 	cin >> chooseWeaponSell;
 	if(chooseWeaponSell-1 <= cInventory.size())
 	{
-
+		merchant.AddInventory(cInventory[chooseWeaponSell - 1]);
+		DeleteInventoryPlayer(chooseWeaponSell);
+		cMoney += cInventory[chooseWeaponSell - 1].GetCost() * cInventory[chooseWeaponSell - 1].GetDurability();
+		cout << "Thank you for your purchase !" << endl;
+		cout << "You have " << GetMoney() << " gold left" << endl;
+		cout << "Do you want buy something else ?" << endl;
+		cout << "1- Yes" << endl << "2- No" << endl;
+		int choose;
+		cin >> choose;
+		if (choose == 1)
+		{
+			DisplayInventoryPlayer(merchant);
+		}
+		else if (choose == 2)
+		{
+			merchant.BuyOrSell(*this);
+		}
 	}
 }
 
 void Character::AddInventoryPlayer(Weapon weapon)
 {
 	cInventory.push_back(weapon);
-	cMoney -= weapon.GetCost() * (0.2 + weapon.GetDurability());
+	cMoney = (weapon.GetCost() * (0.2 + weapon.GetDurability()));
 }
 
 void Character::DeleteInventoryPlayer(int soldWeapon)
 {
-
+	std::vector<Weapon>::iterator it = cInventory.begin() + (soldWeapon - 1);
+	it = cInventory.erase(it);
 }
 
 void Character::Attack(Character& target)

@@ -36,7 +36,7 @@ public:
 	void Attack(Character& target);
 	void TakeDamage(int enemyAttack);
 	void Loot(Character&);
-	void DisplayInventoryPlayer();
+	void DisplayInventoryPlayer(Merchant merchant);
 	void AddInventoryPlayer(Weapon weapon);
 	void DeleteInventoryPlayer(int soldWeapon);
 

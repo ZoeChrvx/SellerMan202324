@@ -23,7 +23,7 @@ static std::string JobToString(Job job)
 	case Job::Paladin:
 		return "paladin";
 	default:
-		return "you are nothing";
+		return "Class unavaible";
 	}
 	
 }

@@ -1,7 +1,3 @@
 ﻿  Character.cpp
-C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.cpp(152,29): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  Merchant.cpp
-  SellerMan.cpp
-  Generating Code...
-C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Character.cpp(120): warning C4715: 'Character::ChooseClass': not all control paths return a value
-  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\SellerMan.exe
+D:\Artfx\Programmation\WS Save\SellerMan202324\Character.cpp(178,29): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+  SellerMan.vcxproj -> D:\Artfx\Programmation\WS Save\SellerMan202324\x64\Debug\SellerMan.exe
