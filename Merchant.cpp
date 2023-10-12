@@ -49,28 +49,28 @@ void Merchant::DisplayShop()
 
 }
 
-void Merchant::BuyOrSell(Character player)
+void Merchant::BuyOrSell(Character player, Character enemy)
 {
 	cout << "Do you want to buy or sell something ?" << endl << "Or just quit my shop ?" << endl;
 	cout << "1. Buy" << endl << "2. Sell" << endl << "3. Quit" << endl;
 	int choice;
 	cin >> choice;
 	if (choice == 1) {
-		DisplayInventoryShop(player);
+		DisplayInventoryShop(player, enemy);
 
 		return ;
 	}
 	else if (choice == 2) {
-		player.DisplayInventoryPlayer(*this);
+		player.DisplayInventoryPlayer(*this, enemy);
 		return;
 	}
 	else if (choice == 3) {
-		player.DisplayActivities(*this);
+		player.DisplayActivities(*this, enemy);
 		return ;
 	}
 }
 
-void Merchant::DisplayInventoryShop(Character player)
+void Merchant::DisplayInventoryShop(Character player, Character enemy)
 {
 	cout << "(Choose the number of the weapon you want to buy)" << endl;
 	int nbWeapon = 0;
@@ -98,11 +98,11 @@ void Merchant::DisplayInventoryShop(Character player)
 			cin >> choose;
 			if(choose == 1)
 			{
-				DisplayInventoryShop(player);
+				DisplayInventoryShop(player, enemy);
 			}
 			else if(choose == 2)
 			{
-				BuyOrSell(player);
+				BuyOrSell(player, enemy);
 			}
 		}
 		else if(player.GetMoney() < mWeapons[chooseWeaponBuy - 1].GetCost() * (0.2 + mWeapons[chooseWeaponBuy - 1].GetDurability()))
@@ -112,7 +112,7 @@ void Merchant::DisplayInventoryShop(Character player)
 	}
 	else if (chooseWeaponBuy- 1 == mWeapons.size() + 1) 
 	{
-		BuyOrSell(player);
+		BuyOrSell(player, enemy);
 	}
 
 }

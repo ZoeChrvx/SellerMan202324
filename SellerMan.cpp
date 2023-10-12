@@ -68,18 +68,27 @@ int main()
 	Character::DisplayBasicWeapon();
 	cin >> choiceWeapon;
 	if (choiceWeapon == 1) {
-		playerWeapon = basicSword;
+		std::vector<Weapon>::iterator it = playerInventory.begin();
+		it = playerInventory.insert(it, basicSword);
+		playerWeapon = *it;
 	}
 	else if (choiceWeapon == 2) {
-		playerWeapon = basicDagger;
+		std::vector<Weapon>::iterator it = playerInventory.begin();
+		it = playerInventory.insert(it, basicDagger);
+		playerWeapon = *it;
 	}
 	else if (choiceWeapon == 3) {
-		playerWeapon = basicStaff;
+		std::vector<Weapon>::iterator it = playerInventory.begin();
+		it = playerInventory.insert(it, basicStaff);
+		playerWeapon = *it;
 	}
 	else if (choiceWeapon == 4) {
-		playerWeapon = basicBow;
+		std::vector<Weapon>::iterator it = playerInventory.begin();
+		it = playerInventory.insert(it, basicBow);
+		playerWeapon = *it;
 	}
-	else {
+	else 
+	{
 		Character::DisplayBasicWeapon();
 		cin >> choiceWeapon;
 	}
@@ -104,8 +113,7 @@ int main()
 	player.Display();
 	cout << endl;
 	cout << endl;
-	player.DisplayActivities(merchant);
-
+	player.DisplayActivities(merchant, arthurP);
 
 
 

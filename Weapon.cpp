@@ -60,3 +60,8 @@ int Weapon::GetDurability()
 {
 	return wDurability;
 }
+
+void Weapon::SetDurability(int x)
+{
+	wDurability = wDurability - x;
+}

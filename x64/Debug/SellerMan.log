@@ -1,3 +1,2 @@
 ﻿  Character.cpp
-D:\Artfx\Programmation\WS Save\SellerMan202324\Character.cpp(178,29): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-  SellerMan.vcxproj -> D:\Artfx\Programmation\WS Save\SellerMan202324\x64\Debug\SellerMan.exe
+  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\SellerMan.exe

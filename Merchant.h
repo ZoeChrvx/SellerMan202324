@@ -24,8 +24,8 @@ public:
 
 	void Display();
 	void DisplayShop();
-	void BuyOrSell(Character player);
-	void DisplayInventoryShop(Character player);
+	void BuyOrSell(Character player, Character enemy);
+	void DisplayInventoryShop(Character player, Character enemy);
 	void AddInventory(Weapon weapon);
 	void DeleteInventory(int purchasedWeapon);
 

@@ -25,5 +25,6 @@ public:
 	int GetDamages();
 	int GetCost();
 	int GetDurability();
+	void SetDurability(int x);
 };
 

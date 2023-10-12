@@ -35,17 +35,18 @@ public:
 	void Display();
 	void Attack(Character& target);
 	void TakeDamage(int enemyAttack);
-	void Loot(Character&);
-	void DisplayInventoryPlayer(Merchant merchant);
+	void Loot(Character& target);
+	void DisplayInventoryPlayer(Merchant merchant, Character enemy);
 	void AddInventoryPlayer(Weapon weapon);
 	void DeleteInventoryPlayer(int soldWeapon);
+	bool IsAlive();
 
 	static void DisplayBasicWeapon();
 	static void DisplayRace();
 	static Races ChooseRace(int choice);
 	static void DisplayClasses();
 	static Job ChooseClass(int choice);
-	void DisplayActivities(Merchant& merchant);
+	void DisplayActivities(Merchant& merchant, Character enemy);
 	
 	
 };
